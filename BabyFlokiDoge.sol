@@ -1442,9 +1442,6 @@ contract BabyFlokiDoge is Context, IERC20, Ownable {
     
     function calculateTaxFee(uint256 _amount, bool isSale) private view returns (uint256) {
         uint256 this_taxFee = _taxFee;
-        if(isSale){
-            this_taxFee = this_taxFee.mul(2);
-        }
         return _amount.mul(this_taxFee).div(100);
     }
 
